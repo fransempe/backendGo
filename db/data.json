@@ -1,0 +1,365 @@
+{
+   "entities":[
+   {
+      "id":1000,
+      "title":"Prueba 1",
+      "property_type":{
+         "id":8,
+         "name":"Departamento"
+      },
+      "transaction_type":{
+         "id":2,
+         "name":"Venta"
+      },
+      "currency":{
+         "id":2,
+         "name":"$"
+      },
+      "address":"Luro",
+      "address_number":"3009",
+      "google_map_data":[
+         
+      ],
+      "city":{
+         "id":569943,
+         "name":"Mar del Plata"
+      },
+      "state":{
+         "id":1818,
+         "name":"Buenos Aires"
+      },
+      "country":{
+         "id":5,
+         "name":"Argentina"
+      },
+      "neighborhood":"Centro",
+      "rooms":2,
+      "bedrooms":2,
+      "bathrooms":1,
+      "garages":1,
+      "m2":300,
+      "m2_covered":300,
+      "year":1998,
+      "price":1000000,
+      "amenities":[
+         {
+            "code":"balcony",
+            "name":"Balc\u00f3n",
+            "group":"Ambientes"
+         },
+         {
+            "code":"natural_gas",
+            "name":"Gas natural",
+            "group":"Servicios"
+         },
+         {
+            "code":"loft",
+            "name":"Altillo",
+            "group":"Ambientes"
+         },
+         {
+            "code":"allow_pets",
+            "name":"Acepta mascotas",
+            "group":"Adicionales"
+         },
+         {
+            "code":"fixed_covered_garage",
+            "name":"Cochera fija cubierta",
+            "group":"Servicios"
+         }
+      ],
+      "images":[
+         
+      ],
+      "status":"available",
+      "payment":[
+         "Acepta permuta"
+      ],
+      "disposition":[
+         
+      ],
+      "tags":[
+         "A estrenar",
+         "Apto cr\u00e9dito"
+      ]
+   },
+   {
+      "id":1001,
+      "title":"",
+      "property_type":{
+         "id":8,
+         "name":"Departamento"
+      },
+      "transaction_type":{
+         "id":2,
+         "name":"Venta"
+      },
+      "currency":{
+         "id":1,
+         "name":"u$s"
+      },
+      "address":"Salta e\/ Libertad yMaip\u00fa",
+      "address_number":"",
+      "google_map_data":{
+         "lat_lng":"-37.9899507912462,-57.549385990246606",
+         "type":"ROADMAP",
+         "zoom":15,
+         "exact":1
+      },
+      "city":{
+         "id":569943,
+         "name":"Mar del Plata"
+      },
+      "state":{
+         "id":1818,
+         "name":"Buenos Aires"
+      },
+      "country":{
+         "id":5,
+         "name":"Argentina"
+      },
+      "neighborhood":"La Perla",
+      "description":"Departamento original en perfecto estado de conservaci\u00f3n y uso. Cocina separada con lavadero. Muy luminoso. Buen placard en el ambiente, el cual es divisible y est\u00e1 orientado a la calle, al igual que...",
+      "rooms":1,
+      "bedrooms":1,
+      "bathrooms":1,
+      "garages":1,
+      "m2":33,
+      "m2_covered":28,
+      "year":2015,
+      "price":8250000,
+      "amenities":[
+         
+      ],
+      "images":[
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/9\/7\/p-83197-110814124756-512832.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/9\/7\/p-83197-110814124756-512832.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/9\/7\/p-83197-110814124756-512832.jpg?v=3",            
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/9\/7\/p-83197-110814124756-512832.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/9\/7\/p-83197-110814124756-646611.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/9\/7\/p-83197-110814124756-646611.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/9\/7\/p-83197-110814124756-646611.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/9\/7\/p-83197-110814124756-646611.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/9\/7\/p-83197-110814124756-836437.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/9\/7\/p-83197-110814124756-836437.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/9\/7\/p-83197-110814124756-836437.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/9\/7\/p-83197-110814124756-836437.jpg?v=3"
+         }
+      ],
+      "status":"available",
+      "payment":[
+         
+      ],
+      "disposition":[
+         "Frente"
+      ],
+      "tags":[
+         "Oportunidad",
+         "A estrenar"
+      ]
+   },
+   {
+      "id":1002,
+      "title":"Local en La Perla",
+      "property_type":{
+         "id":16,
+         "name":"Local"
+      },
+      "transaction_type":{
+         "id":2,
+         "name":"Venta"
+      },
+      "currency":{
+         "id":1,
+         "name":"u$s"
+      },
+      "address":"Independencia",
+      "address_number":"873",
+      "google_map_data":{
+         "lat_lng":"-37.9895843,-57.54745660000003",
+         "type":"ROADMAP",
+         "zoom":13,
+         "exact":1
+      },
+      "city":{
+         "id":569943,
+         "name":"Mar del Plata"
+      },
+      "state":{
+         "id":1818,
+         "name":"Buenos Aires"
+      },
+      "country":{
+         "id":5,
+         "name":"Argentina"
+      },
+      "neighborhood":"La Perla",
+      "description":"Se trata de un local al frente, sobre la avenidaIndependencia. El mismo est\u00e1 en excelente estado. Tiene unos 43 mts.cubiertos aproximadamente.\r\nConsta de un amplio ambiente irregular alfrente, un m...",
+      "rooms":2,
+      "bedrooms":1,
+      "bathrooms":1,
+      "garages":1,
+      "m2":65,
+      "m2_covered":43,
+      "year":2028,
+      "price":6550000,
+      "amenities":[
+         
+      ],
+      "images":[
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-713777.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-713777.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-713777.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-713777.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-773449.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-773449.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-773449.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-773449.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-254314.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-254314.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-254314.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-254314.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-107389.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-107389.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-107389.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-107389.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-927134.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-927134.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-927134.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-927134.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-577781.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-577781.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-577781.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-577781.jpg?v=3"
+         }
+      ],
+      "status":"available",
+      "payment":[
+         "Contado",
+         "Acepta permuta"
+      ],
+      "disposition":[
+         "Frente"
+      ],
+      "tags":[
+         "Urgente",
+         "Oportunidad",
+         "Apto cr\u00e9dito"
+      ]
+   },
+   {
+      "id":1003,
+      "title":"Local en La Perla",
+      "property_type":{
+         "id":16,
+         "name":"Local"
+      },
+      "transaction_type":{
+         "id":2,
+         "name":"Venta"
+      },
+      "currency":{
+         "id":1,
+         "name":"u$s"
+      },
+      "address":"Independencia",
+      "address_number":"873",
+      "google_map_data":{
+         "lat_lng":"-37.9895276,-57.547486100000015",
+         "type":"ROADMAP",
+         "zoom":13,
+         "exact":1
+      },
+      "city":{
+         "id":569943,
+         "name":"Mar del Plata"
+      },
+      "state":{
+         "id":1818,
+         "name":"Buenos Aires"
+      },
+      "country":{
+         "id":5,
+         "name":"Argentina"
+      },
+      "neighborhood":"La Perla",
+      "description":"Se trata de un local al frente, sobre la avenida Independencia. El mismo est\u00e1 en excelente estado. Tiene unos 43 mts. cubiertos aproximadamente.\r\nConsta de un amplio ambiente irregular al frente, un m...",
+      "rooms":1,
+      "bedrooms":1,
+      "bathrooms":1,
+      "garages":0,
+      "m2":43,
+      "m2_covered":43,
+      "year":1998,
+      "price":6544000,
+      "amenities":[
+         
+      ],
+      "images":[
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-713777.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-713777.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-713777.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-713777.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-773449.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-773449.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-773449.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-773449.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-254314.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-254314.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-254314.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-254314.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-107389.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-107389.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-107389.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-107389.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-927134.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-927134.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-927134.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-927134.jpg?v=3"
+         },
+         {
+            "original":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1920\/1\/1\/p-83211-250614103438-577781.jpg?v=3",
+            "small":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w100\/1\/1\/p-83211-250614103438-577781.jpg?v=3",
+            "medium":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w500\/1\/1\/p-83211-250614103438-577781.jpg?v=3",
+            "big":"https:\/\/cdn-thumbnailer-properties.inmokey.com\/p\/w1000\/1\/1\/p-83211-250614103438-577781.jpg?v=3"
+         }
+      ],
+      "status":"available",
+      "payment":[
+         "Contado",
+         "Acepta permuta"
+      ],
+      "disposition":[
+         "Frente"
+      ],
+      "tags":[
+         "Apto cr\u00e9dito"
+      ]
+   }
+]
+}
