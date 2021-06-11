@@ -3,7 +3,7 @@ package models
 // User struct which contains a name
 // a type and a list of social links
 type Entity struct {
-	Id               int             `json:"id"`
+	ID               int             `json:"id"`
 	Title            string          `json:"title"`
 	Property_Type    PropertyType    `json:"property_type"`
 	Transaction_Type TransactionType `json:"transaction_type"`
@@ -30,3 +30,5 @@ type Currency struct {
 	Id   int    `json:"id"`
 	Name string `json:"name"`
 }
+
+var Entities []Entity
