@@ -1,13 +1,12 @@
-package routes
+package authentication
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/dgrijalva/jwt-go"
 )
 
-func EntitiesList(w http.ResponseWriter, r *http.Request) {
+func VerifyToken(w http.ResponseWriter, r *http.Request) {
 
 	cookie, err := r.Cookie("token")
 	if err != nil {
@@ -41,6 +40,5 @@ func EntitiesList(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusUnauthorized)
 	}
 
-	w.Write([]byte(fmt.Sprintf("Welcome, %s", claims.Username)))
-
+	//w.Write([]byte(fmt.Sprintf("Welcome, %s", claims.Username)))
 }

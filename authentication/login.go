@@ -1,4 +1,4 @@
-package routes
+package authentication
 
 import (
 	"encoding/json"
