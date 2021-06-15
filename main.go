@@ -59,6 +59,7 @@ func GetProperties(w http.ResponseWriter, r *http.Request) {
 		decoder := json.NewDecoder(r.Body)
 		var params string
 		decoder.Decode(&params)
+
 		if params != "" {
 			for _, prop := range JsonProperties {
 				if prop.Property_Type.Name == params {
