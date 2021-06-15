@@ -56,7 +56,20 @@ func GetProperties(w http.ResponseWriter, r *http.Request) {
 	if !verify {
 		fmt.Fprintf(w, "Unauthorized")
 	} else {
-		json.NewEncoder(w).Encode(JsonProperties)
+		decoder := json.NewDecoder(r.Body)
+		var params string
+		decoder.Decode(&params)
+		if params != "" {
+			for _, prop := range JsonProperties {
+				if prop.Property_Type.Name == params {
+					w.Header().Set("Content-Type", "application/json")
+					json.NewEncoder(w).Encode(prop)
+				}
+			}
+		} else {
+			json.NewEncoder(w).Encode(JsonProperties)
+		}
+
 	}
 }
 
