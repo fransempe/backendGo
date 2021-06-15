@@ -6,16 +6,16 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-func VerifyToken(w http.ResponseWriter, r *http.Request) {
+func VerifyToken(w http.ResponseWriter, r *http.Request) bool {
 
 	cookie, err := r.Cookie("token")
 	if err != nil {
 		if err == http.ErrNoCookie {
 			w.WriteHeader(http.StatusUnauthorized)
-			return
+			return false
 		}
 		w.WriteHeader(http.StatusBadRequest)
-		return
+		return false
 	}
 
 	tokenStr := cookie.Value
@@ -30,15 +30,16 @@ func VerifyToken(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		if err == jwt.ErrSignatureInvalid {
 			w.WriteHeader(http.StatusUnauthorized)
-			return
+			return false
 		}
 		w.WriteHeader(http.StatusBadRequest)
-		return
+		return false
 	}
 
 	if !tkn.Valid {
 		w.WriteHeader(http.StatusUnauthorized)
 	}
 
+	return true
 	//w.Write([]byte(fmt.Sprintf("Welcome, %s", claims.Username)))
 }

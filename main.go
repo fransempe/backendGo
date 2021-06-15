@@ -15,6 +15,11 @@ import (
 	"github.com/rs/cors"
 )
 
+/*TODO: El proyecto esta separado por paquetes (como sugiere la documentación de GO)
+en este caso, queda embebido dentro del package MAIN a fin de poder usar la variable JsonProperties (Es la variable que contendrá
+el json provisto al iniciar la aplicación). De todas formas, presento la estructura del proyecto como debiera estar distribuida */
+
+//Inicializo la variable con los datos provistos del json.
 var JsonProperties []models.Property = ParsePropertiesJson()
 
 func main() {
@@ -22,7 +27,7 @@ func main() {
 }
 
 func indexRoute(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome API")
+	fmt.Fprintf(w, "Welcome GO|API")
 }
 
 func Handlers() {
@@ -47,96 +52,115 @@ func Handlers() {
 }
 
 func GetProperties(w http.ResponseWriter, r *http.Request) {
-	authentication.VerifyToken(w, r)
-	json.NewEncoder(w).Encode(JsonProperties)
+	var verify bool = authentication.VerifyToken(w, r)
+	if !verify {
+		fmt.Fprintf(w, "Unauthorized")
+	} else {
+		json.NewEncoder(w).Encode(JsonProperties)
+	}
 }
 
 func GetPropertyById(w http.ResponseWriter, r *http.Request) {
-	authentication.VerifyToken(w, r)
-	vars := mux.Vars(r)
-	propertyID, err := strconv.Atoi(vars["id"])
+	var verify bool = authentication.VerifyToken(w, r)
+	if !verify {
+		fmt.Fprintf(w, "Unauthorized")
+	} else {
+		vars := mux.Vars(r)
+		propertyID, err := strconv.Atoi(vars["id"])
 
-	if err != nil {
-		fmt.Fprintf(w, "Invalid ID")
-		return
-	}
+		if err != nil {
+			fmt.Fprintf(w, "Invalid ID")
+			return
+		}
 
-	for _, prop := range JsonProperties {
-		if prop.ID == propertyID {
-			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(prop)
+		for _, prop := range JsonProperties {
+			if prop.ID == propertyID {
+				w.Header().Set("Content-Type", "application/json")
+				json.NewEncoder(w).Encode(prop)
+			}
 		}
 	}
 }
 
 func NewProperty(w http.ResponseWriter, r *http.Request) {
-	authentication.VerifyToken(w, r)
-	var newProperty models.Property
+	var verify bool = authentication.VerifyToken(w, r)
+	if !verify {
+		fmt.Fprintf(w, "Unauthorized")
+	} else {
+		var newProperty models.Property
 
-	reqBody, err := ioutil.ReadAll(r.Body)
+		reqBody, err := ioutil.ReadAll(r.Body)
 
-	if err != nil {
-		fmt.Fprintf(w, "Insert a new property")
+		if err != nil {
+			fmt.Fprintf(w, "Insert a new property")
+		}
+
+		json.Unmarshal(reqBody, &newProperty)
+
+		//Autogenerar un id a partir de mi lista existente
+		newProperty.ID = len(JsonProperties) + 1
+		JsonProperties = append(JsonProperties, newProperty)
+
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusCreated)
+		json.NewEncoder(w).Encode(newProperty)
 	}
-
-	json.Unmarshal(reqBody, &newProperty)
-
-	//Autogenerar un id a partir de mi lista existente
-	newProperty.ID = len(JsonProperties) + 1
-
-	//append(prop, newProperty)
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(newProperty)
 }
 
 func DeleteProperty(w http.ResponseWriter, r *http.Request) {
-	authentication.VerifyToken(w, r)
-	vars := mux.Vars(r)
-	propertyID, err := strconv.Atoi(vars["id"])
+	var verify bool = authentication.VerifyToken(w, r)
+	if !verify {
+		fmt.Fprintf(w, "Unauthorized")
+	} else {
+		vars := mux.Vars(r)
+		propertyID, err := strconv.Atoi(vars["id"])
 
-	if err != nil {
-		fmt.Fprintf(w, "Invalid ID")
-		return
-	}
+		if err != nil {
+			fmt.Fprintf(w, "Invalid ID")
+			return
+		}
 
-	for i, property := range JsonProperties {
-		if property.ID == propertyID {
-			JsonProperties = append(JsonProperties[:i], JsonProperties[i+1:]...)
-			fmt.Fprintf(w, "The property has been removed succesfully")
+		for i, property := range JsonProperties {
+			if property.ID == propertyID {
+				JsonProperties = append(JsonProperties[:i], JsonProperties[i+1:]...)
+				fmt.Fprintf(w, "The property has been removed succesfully")
+			}
 		}
 	}
 }
 
 func ChangePropertyStatus(w http.ResponseWriter, r *http.Request) {
-	authentication.VerifyToken(w, r)
-	decoder := json.NewDecoder(r.Body)
+	var verify bool = authentication.VerifyToken(w, r)
+	if !verify {
+		fmt.Fprintf(w, "Unauthorized")
+	} else {
+		decoder := json.NewDecoder(r.Body)
 
-	// Se usa para almacenar datos de clave de parámetro = valor
-	var params string
+		// Se usa para almacenar datos de clave de parámetro = valor
+		var params string // ingresar en el body el string: "available","rented" o "closed"
 
-	// Analiza los parámetros en el mapa
-	decoder.Decode(&params)
+		// Analiza los parámetros en el mapa
+		decoder.Decode(&params)
 
-	vars := mux.Vars(r)
-	propertyID, err := strconv.Atoi(vars["id"])
+		vars := mux.Vars(r)
+		propertyID, err := strconv.Atoi(vars["id"])
 
-	if err != nil {
-		fmt.Fprintf(w, "Invalid ID")
-		return
-	}
+		if err != nil {
+			fmt.Fprintf(w, "Invalid ID")
+			return
+		}
 
-	reqBody, err := ioutil.ReadAll(r.Body)
-	if err != nil {
-		fmt.Fprintf(w, "Please enter valid data")
-		return
-	}
-	json.Unmarshal(reqBody, &JsonProperties)
+		reqBody, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			fmt.Fprintf(w, "Please enter valid data")
+			return
+		}
+		json.Unmarshal(reqBody, &JsonProperties)
 
-	for i, property := range JsonProperties {
-		if property.ID == propertyID {
-			JsonProperties[i].Status = params
+		for i, property := range JsonProperties {
+			if property.ID == propertyID {
+				JsonProperties[i].Status = params
+			}
 		}
 	}
 }
