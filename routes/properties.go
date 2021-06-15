@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"../main"
 	"github.com/fransempe/backendGo/authentication"
 	"github.com/fransempe/backendGo/models"
 )
@@ -15,12 +14,26 @@ import (
 
 func GetProperties(w http.ResponseWriter, r *http.Request) {
 	authentication.VerifyToken(w, r)
-	fmt.Println(main.JsonStr)
-	//ParsePropertiesJson()
+
 }
 
 func GetPropertyById(w http.ResponseWriter, r *http.Request) {
 	authentication.VerifyToken(w, r)
+	/*vars := mux.Vars(r)
+	propertyID, err := strconv.Atoi(vars["id"])
+
+	if err != nil {
+		fmt.Fprintf(w, "Invalid ID")
+		return
+	}
+
+	for _, property := range properties {
+		if property.ID == propertyID {
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(property)
+		}
+	}*/
+
 }
 
 func NewProperty(w http.ResponseWriter, r *http.Request) {
@@ -46,8 +59,47 @@ func NewProperty(w http.ResponseWriter, r *http.Request) {
 
 func DeleteProperty(w http.ResponseWriter, r *http.Request) {
 	authentication.VerifyToken(w, r)
+
+	/*vars := mux.Vars(r)
+	propertyID, err := strconv.Atoi(vars["id"])
+
+	if err != nil {
+		fmt.Fprintf(w, "Invalid ID")
+		return
+	}
+
+	for i, property := range properties {
+		if property.ID == propertyID {
+
+			properties = append(properties[:i], properties[i+1:]...)
+			fmt.Fprintf(w, "The property with ID %v hast been removed succesfully")
+		}
+	}*/
 }
 
 func ChangePropertyStatus(w http.ResponseWriter, r *http.Request) {
 	authentication.VerifyToken(w, r)
+
+	/*vars := mux.Vars(r)
+	propertyID, err := strconv.Atoi(vars["id"])
+
+		if err != nil {
+			fmt.Fprintf(w, "Invalid ID")
+			return
+		}
+
+		reqBody, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			fmt.Fprintf(w, "Please enter valid data")
+			return
+		}
+		json.Unmarshal(reqBody, &updatedProperty)
+
+		for i, property := range properties {
+			if property.ID == propertyID {
+
+				properties = append(properties[:i], properties[i+1:]...)
+				updatedProperty.Status
+			}
+		}*/
 }

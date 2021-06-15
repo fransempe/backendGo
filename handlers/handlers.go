@@ -21,11 +21,11 @@ func Handlers() {
 
 	router.HandleFunc("/", indexRoute)
 	router.HandleFunc("/login", authentication.Login).Methods("POST")
-	router.HandleFunc("/entities", routes.GetProperties).Methods("GET")
-	router.HandleFunc("/entitiess", routes.GetPropertyById).Methods("GET")
-	router.HandleFunc("/entities2", routes.NewProperty).Methods("POST")
-	router.HandleFunc("/entities3", routes.DeleteProperty).Methods("POST")
-	router.HandleFunc("/entities4", routes.ChangePropertyStatus).Methods("POST")
+	router.HandleFunc("/properties", routes.GetProperties).Methods("GET")
+	router.HandleFunc("/properties/{id}", routes.GetPropertyById).Methods("GET")
+	router.HandleFunc("/properties", routes.NewProperty).Methods("POST")
+	router.HandleFunc("/properties/{id}", routes.DeleteProperty).Methods("DELETE")
+	router.HandleFunc("/properties/{id}", routes.ChangePropertyStatus).Methods("PUT")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
