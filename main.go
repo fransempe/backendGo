@@ -57,21 +57,51 @@ func GetProperties(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Unauthorized")
 	} else {
 		decoder := json.NewDecoder(r.Body)
-		var params string
+
+		// Se usa para almacenar datos de clave de parámetro = valor
+		var params models.SearchParams
+
+		// Analiza los parámetros en el mapa
 		decoder.Decode(&params)
 
-		if params != "" {
-			for _, prop := range JsonProperties {
-				if prop.Property_Type.Name == params {
-					w.Header().Set("Content-Type", "application/json")
-					json.NewEncoder(w).Encode(prop)
-				}
-			}
-		} else {
+		/*TODO: Mejorar el algoritmo de busqueda, agregar el rango de precios y el texto libre, que funcionen
+		en conjunto.*/
+		if params.PropertyTypeSearch == 0 && params.TransactionType == 0 {
+			w.Header().Set("Content-Type", "application/json")
 			json.NewEncoder(w).Encode(JsonProperties)
-		}
+		} else {
+			for _, prop := range JsonProperties {
 
+				if params.PropertyTypeSearch != 0 {
+					if prop.Property_Type.Id == params.PropertyTypeSearch {
+						w.Header().Set("Content-Type", "application/json")
+						json.NewEncoder(w).Encode(prop)
+					}
+				}
+
+				if params.TransactionType != 0 {
+					if prop.Transaction_Type.Id == params.TransactionType {
+						w.Header().Set("Content-Type", "application/json")
+						json.NewEncoder(w).Encode(prop)
+					}
+				}
+
+				/*if RANGE_MIN != 0 && RANGE_MAX != 0 {
+					if RANGE_MIN <= prop.Price && prop.Price <= RANGE_MAX {
+						w.Header().Set("Content-Type", "application/json")
+
+					}
+				}
+				if TEXT != "" {
+					if prop.Title == params.Text {
+						w.Header().Set("Content-Type", "application/json")
+					}
+				}*/
+
+			}
+		}
 	}
+
 }
 
 func GetPropertyById(w http.ResponseWriter, r *http.Request) {

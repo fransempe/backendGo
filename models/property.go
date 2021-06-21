@@ -10,12 +10,20 @@ type Property struct {
 	Currency         Currency        `json:"currency"`
 	Address          string          `json:"address"`
 	Address_Number   string          `json:"address_number"`
+	Google_Map_Data  GoogleMapData   `json:"google_map_data,omitempty"`
 	City             City            `json:"city"`
-	State            State           `json:"State"`
-	Country          Country         `json:"Country"`
+	State            State           `json:"state"`
+	Country          Country         `json:"country"`
 	Neighborhood     string          `json:"neighborhood"`
 	Rooms            int             `json:"rooms"`
+	Bathrooms        int             `json:"bathrooms,omitempty"`
+	Garages          int             `json:"garages,omitempty"`
 	M2               int             `json:"m2"`
+	M2_covered       int             `json:"m2_covered,omitempty"`
+	Year             int             `json:"year,omitempty"`
+	Price            int             `json:"price"`
+	Amenities        []Amenities     `json:"amenities,omitempty"`
+	Images           []Images        `json:"images,omitempty"`
 	Status           string          `json:"status"`
 	Payment          []string        `json:"payment"`
 	Disposition      []string        `json:"disposition"`
@@ -55,6 +63,13 @@ type Country struct {
 	Name string `json:"name"`
 }
 
+type GoogleMapData struct {
+	Lat_Lng string `json:"lat_lng"`
+	Type    string `json:"type"`
+	Zoom    int    `json:"zoom"`
+	Exact   int    `json:"exact"`
+}
+
 type Amenities struct {
 	Code  string `json:"code"`
 	Name  string `json:"name"`
@@ -66,6 +81,14 @@ type Images struct {
 	Small    string `json:"small"`
 	Medium   string `json:"medium"`
 	Big      string `json:"big"`
+}
+
+type SearchParams struct {
+	PropertyTypeSearch int    `json:"property_type"`
+	TransactionType    int    `json:"transaction_type"`
+	Text               string `json:"text"`
+	Range_Min          int    `json:"range_min"`
+	Range_Max          int    `json:"range_max"`
 }
 
 type Properties struct {
